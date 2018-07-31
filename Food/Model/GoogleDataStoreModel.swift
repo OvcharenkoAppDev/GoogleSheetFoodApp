@@ -22,123 +22,6 @@ protocol IGoogleSheetDataStore{
 class GoodleSheetDataStore : NSObject {
     static var sharedManager : IGoogleSheetDataStore = DefaultGoogleSheetDataStore()
 }
-public class Food{
-    var nameUser = ""
-    var nameFood = ""
-    var line = 0
-    var column = 0
-    var isOrdered = false
-    var columnLetter = ""
-    
-//    static func orderesFood(foods : [Food]) -> [Food]{
-//
-//        let googleDataStor = GoodleSheetDataStore.sharedManager
-//        let currentUserName = googleDataStor.currentMyName()
-//
-//        var foodOrdered : [Food] = []
-//        for food in foods {
-//            if food.isOrdered {
-//                foodOrdered.append(food)
-//            }
-//        }
-////        if currentUserName == nil {
-////            return foodOrdered
-////        }
-////        var userFoodOrdered = [Food]()
-////        for food in foodOrdered{
-////            if food.nameUser == currentUserName {
-////                userFoodOrdered.append(food)
-////            }
-////        }
-////        return userFoodOrdered
-//        return foodOrdered
-//    }
-//    static func orderedFoodNames(foods : [Food]) -> [String]{
-//
-//        let foodOrdered : [Food] = self.orderesFood(foods: foods)
-//        var foodNames : [String] = []
-//        for food in foodOrdered{
-//            foodNames.append(food.nameFood)
-//        }
-//        return foodNames
-//
-//    }
-//    static func notOrderedFoodNames(foods : [Food]) -> [String]{
-//
-//        var orderedFoodNames : [String] = []
-//        var notOrderedFoodNames : [String] = []
-//        let foodOrdered : [Food] = self.orderesFood(foods: foods)
-//
-//        for food in foodOrdered{
-//            orderedFoodNames.append(food.nameFood)
-//        }
-//        for food in foods {
-//            if orderedFoodNames.index(of: food.nameFood) == nil {
-//                if notOrderedFoodNames.index(of: food.nameFood) == nil {
-//                     notOrderedFoodNames.append(food.nameFood)
-//                }
-//            }
-//
-//        }
-//
-//        return notOrderedFoodNames
-//    }
-    
-    static func currentUserFoods() -> [Food] {
-        let googleDataStor = DefaultGoogleSheetDataStore.sharedManager
-        guard let currentUserName = googleDataStor.currentMyName() else {
-            return []
-        }
-        
-        let foods = googleDataStor.foods
-        
-        var userFoods: [Food] = []
-        
-        for food in foods {
-            if food.nameUser == currentUserName {
-                userFoods.append(food)
-            }
-        }
-        
-        if userFoods.count <= 0 {
-            for foodName in googleDataStor.foodArray {
-                let food = Food()
-                food.nameUser = currentUserName
-                food.nameFood = foodName
-                food.isOrdered = false
-                food.column = -1
-                food.line = -1
-                userFoods.append(food)
-            }
-        }
-        
-        return userFoods
-    }
-    
-    static func orderedFoodNames() -> [String]{
-        
-        let foods : [Food] = self.currentUserFoods()
-        var foodNames : [String] = []
-        for food in foods {
-            if food.isOrdered {
-                foodNames.append(food.nameFood)
-            }
-        }
-        return foodNames
-    }
-    
-    static func notOrderedFoodNames() -> [String]{
-        
-        let foods : [Food] = self.currentUserFoods()
-        var foodNames : [String] = []
-        for food in foods {
-            if !food.isOrdered {
-                foodNames.append(food.nameFood)
-            }
-        }
-        return foodNames
-    }
-}
 
 typealias DefaultGoogleDataStore_WriteCompletion = () -> Void
 
@@ -243,7 +126,7 @@ class DefaultGoogleSheetDataStore : NSObject, IGoogleSheetDataStore, GIDSignInUI
     
     @objc func receivingData(ticket: GTLRServiceTicket, finishedWithObject result : GTLRSheets_ValueRange, error : NSError?) {
         
-        if let error = error {
+        if error != nil {
             return
         }else {
             guard let tableData = result.values else {

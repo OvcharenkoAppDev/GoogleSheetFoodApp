@@ -41,7 +41,6 @@ class NotOrderedFoodTableView: UIView, UITableViewDataSource,UITableViewDelegate
         
         let width: CGFloat = self.frame.width
         let height: CGFloat = self.frame.height
-        let avalibl  = self.tableVIewNotOrdered?.sizeThatFits(CGSize(width: width, height: height))
         
         self.tableVIewNotOrdered?.frame = CGRect(x: 0,
                                        y: 0,

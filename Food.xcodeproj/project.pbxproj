@@ -22,6 +22,7 @@
 		BB86F23921036754002B607B /* ExtensionDayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86F23821036754002B607B /* ExtensionDayOfWeek.swift */; };
 		BB90689D210FB988000B6FF3 /* ExtensionFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB90689C210FB988000B6FF3 /* ExtensionFill.swift */; };
 		BB90689F210FBAA8000B6FF3 /* ExtensionCreateOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB90689E210FBAA8000B6FF3 /* ExtensionCreateOrder.swift */; };
+		BB9068A12111135C000B6FF3 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9068A02111135C000B6FF3 /* Food.swift */; };
 		C84DC77D2109CA68001A6201 /* NotOrderedFoodTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DC77C2109CA68001A6201 /* NotOrderedFoodTableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		BB86F23821036754002B607B /* ExtensionDayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDayOfWeek.swift; sourceTree = "<group>"; };
 		BB90689C210FB988000B6FF3 /* ExtensionFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFill.swift; sourceTree = "<group>"; };
 		BB90689E210FBAA8000B6FF3 /* ExtensionCreateOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCreateOrder.swift; sourceTree = "<group>"; };
+		BB9068A02111135C000B6FF3 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		BBCD89F021012B6400B541BB /* libGoogleAPIClientForREST.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleAPIClientForREST.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCD89F221012B7900B541BB /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCD89F421012B7900B541BB /* libGTMOAuth2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGTMOAuth2.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4E73762102724C00EB7FCD /* GoogleDataStoreModel.swift */,
+				BB9068A02111135C000B6FF3 /* Food.swift */,
 				BB90689C210FB988000B6FF3 /* ExtensionFill.swift */,
 				BB90689E210FBAA8000B6FF3 /* ExtensionCreateOrder.swift */,
 				BB86F23821036754002B607B /* ExtensionDayOfWeek.swift */,
@@ -331,6 +334,7 @@
 				BB4E73772102724C00EB7FCD /* GoogleDataStoreModel.swift in Sources */,
 				BB1AD24D20FFD38A006B81ED /* MainViewController.swift in Sources */,
 				BB1AD24B20FFD38A006B81ED /* AppDelegate.swift in Sources */,
+				BB9068A12111135C000B6FF3 /* Food.swift in Sources */,
 				C84DC77D2109CA68001A6201 /* NotOrderedFoodTableView.swift in Sources */,
 				BB86F23621035FD9002B607B /* OrderedFoodTableView.swift in Sources */,
 			);

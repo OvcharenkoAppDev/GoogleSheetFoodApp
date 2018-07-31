@@ -67,12 +67,12 @@ extension DefaultGoogleSheetDataStore {
         let urlSession: URLSession = URLSession(configuration: urlSessionConfig)
         let dataTask: URLSessionDataTask = urlSession.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if let responseData = data {
-                print("data \(try? JSONSerialization.jsonObject(with: responseData, options: []))")
+                print("data \(String(describing: try? JSONSerialization.jsonObject(with: responseData, options: [])))")
             } else {
                 print("empty data")
             }
             
-            print("error \(error)")
+            print("error \(String(describing: error))")
             completion()
         }
         dataTask.resume()

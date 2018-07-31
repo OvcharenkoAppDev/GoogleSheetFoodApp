@@ -42,7 +42,6 @@ class OrderedFoodTableView: UIView, UITableViewDataSource,UITableViewDelegate{
         
         let width: CGFloat = self.frame.width
         let height: CGFloat = self.frame.height
-        let avalibl  = self.tableVIewOrdered?.sizeThatFits(CGSize(width: width, height: height))
         
         self.tableVIewOrdered?.frame = CGRect(x: 0,
                                        y: 0,
